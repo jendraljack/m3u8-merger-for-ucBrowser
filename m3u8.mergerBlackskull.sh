@@ -6,6 +6,12 @@ busybox echo -e "\nGunakan: bash $0 berkas.m3u8\n"
 kill -9 $$
 fi
 
+if [ ! -z "$2" ]
+then
+busybox echo -e "\nNama berkas m3u8 berisi spasi\nHarus diApit nama berkas dengan tanda kutip (\").\nContoh: bash $0 \"nama berkas.m3u8\"\n"
+kill -9 $$
+fi
+
 if [ ! -d "$black/ts" ]
 then
 mkdir $black/ts

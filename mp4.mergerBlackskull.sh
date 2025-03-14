@@ -5,6 +5,11 @@ then
 busybox echo -e "\nMerge video for UC browser\nGunakan: bash $0 berkas.mp4\n"
 kill -9 $$
 fi
+if [ ! -z "$2" ]
+then
+busybox echo -e "\nNama berkas mp4 berisi spasi\nHarus diApit nama berkas dengan tanda kutip (\").\nContoh: bash $0 \"nama berkas.mp4\"\n"
+kill -9 $$
+fi
 
 if [ ! -d "$black/ts" ]
 then
