@@ -25,5 +25,6 @@ cat $black/ts.log|busybox awk -v curent=$black/$1 '{print "nomor" NR+0 "=\"" NR+
 $SHELL $black/00-$(basename $0)
 #workfold="$(cat $black/ts.log|busybox head -n 1)"
 echo "Memulai menggabungkan..."
-$SHELL $black/mergeTSv2.sh
+busybox echo -e "#!$SHELL\ncurdur=\"\$(dirname \$(realpath \$0))\"\nbusybox ls \$curdur/ts/*.ts > \$curdur/allts.log\necho \"Running \$(basename \$0)....\"\nblackskullAuVid ()\n{\necho \"M3U8 to mkv\"\n}\nblackskullAuVid\nsleep 4\ncat \$curdur/allts.log|busybox awk '{print \"file \\\x27\" \$0 \"\\\x27\"}' > \$curdur/myFile.txt\nffmpeg -f concat -safe 0 -i \$curdur/myFile.txt -c copy \$curdur/$1.mkv\nsleep 2\nrm \$curdur/ts/*.ts" > $black/01-$(basename $0)
+$SHELL $black/01-$(basename $0)
 sleep 3
